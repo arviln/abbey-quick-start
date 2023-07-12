@@ -53,7 +53,7 @@ resource "abbey_grant_kit" "null_grant" {
           # Typically uses your Primary Identity.
           # For this local example, you can pass in an arbitrary string.
           # For more information on what a Primary Identity is, visit https://docs.abbey.io.
-          one_of = ["replace-me@example.com"]
+          one_of = ["arvil@abbey.so"]
         }
       }
     ]
@@ -62,7 +62,7 @@ resource "abbey_grant_kit" "null_grant" {
   output = {
     # Replace with your own path pointing to where you want your access changes to manifest.
     # Path is an RFC 3986 URI, such as `github://{organization}/{repo}/path/to/file.tf`.
-    location = "github://replace-me-with-organization/replace-me-with-repo/access.tf"
+    location = "github://arviln/abbey-quick-start/access.tf"
     append = <<-EOT
       resource "null_resource" "null_grant_${random_pet.random_pet_name.id}" {
       }
@@ -77,7 +77,7 @@ resource "abbey_identity" "user_1" {
     abbey = [
       {
         type  = "AuthId"
-        value = "replace-me@example.com"
+        value = "arvil@abbey.so"
       }
     ]
   })
